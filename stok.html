@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sitta Praktik - Dashboard</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- JSON -->
+  <script src="/js/data.js"></script>
+  <!-- JAVASCRIPT -->
+  <script src="/js/stok.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="/stok.html" class="active">Informasi Bahan Ajar</a>
+    <a href="/tracking.html">Tracking Pengiriman</a>
+    <div class="dropdown">
+      <button class="dropbtn">Laporan ⬇</button>
+      <div class="dropdown-content">
+        <a href="#">Monitoring Progress DO Bahan Ajar</a>
+        <a href="#">Rekap Bahan Ajar</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="m-8 p-8 rounded-md bg-orange-500">
+    <h1>STOK Bahan Ajar</h1>
+  </div>
+
+  <div id="StokBahanAjar"></div>
+
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="flex items-center justify-between">
+        <div class="font-bold text-2xl">Tambah Stok</div>
+        <span class="close">&times;</span>
+      </div>
+      <form id="FormTambahStok" class="mt-4">
+        <div class="grid grid-cols-3 gap-2">
+          <div class="flex flex-col">
+            <label for="">Kode Lokasi</label>
+            <input type="text" name="kodeLokasi" class="p-2 bg-gray-200 border-0 rounded-md">
+          </div>
+          <div class="flex flex-col">
+            <label for="">Kode Barang</label>
+            <input type="text" name="kodeBarang" class="p-2 bg-gray-200 border-0 rounded-md">
+          </div>
+          <div class="flex flex-col">
+            <label for="">Nama Barang</label>
+            <input type="text" name="namaBarang" class="p-2 bg-gray-200 border-0 rounded-md">
+          </div>
+          <div class="flex flex-col">
+            <label for="">Jenis Barang</label>
+            <input type="text" name="jenisBarang" class="p-2 bg-gray-200 border-0 rounded-md">
+          </div>
+          <div class="flex flex-col">
+            <label for="">Edisi</label>
+            <input type="text" name="edisi" class="p-2 bg-gray-200 border-0 rounded-md">
+          </div>
+          <div class="flex flex-col">
+            <label for="">Stok</label>
+            <input type="text" name="stok" class="p-2 bg-gray-200 border-0 rounded-md">
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <button type="submit" class="mt-4 bg-orange-500 px-4 py-2 rounded-md">submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

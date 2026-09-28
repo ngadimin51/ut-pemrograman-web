@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sitta Praktik - Dashboard</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- JSON -->
+  <script src="/js/data.js"></script>
+  <!-- JAVASCRIPT -->
+  <script src="/js/dashboard.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="/stok.html">Informasi Bahan Ajar</a>
+    <a href="/tracking.html">Tracking Pengiriman</a>
+    <div class="dropdown">
+      <button class="dropbtn">Laporan ⬇</button>
+      <div class="dropdown-content">
+        <a href="#">Monitoring Progress DO Bahan Ajar</a>
+        <a href="#">Rekap Bahan Ajar</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="m-8 p-8 rounded-md bg-orange-500">
+      <h1>DASHBOARD Aplikasi SITTA</h1>
+      <div id="greeting"></div>
+    </div>
+  
+    <div class="m-8 p-8 rounded-md bg-gray-100">
+      <form id="formTracking">
+        <div class="flex-col">
+          <label for="tracking">Tracking</label>
+          <input
+            type="text"
+            name="tracking"
+            placeholder="123456"
+            class="py-2 px-4 rounded-md">
+            <button type="submit" class="bg-white p-2 rounded-full shadow">cari</button>
+        </div>
+      </form>
+    </div>
+  
+    <div class="m-8 p-8 rounded-md bg-gray-100" id="timeline"></div>
+  </main>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="ModalMessage"></p>
+    </div>
+  </div>
+</body>
+</html>

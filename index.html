@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sitta Praktik - Login</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- JSON -->
+  <script src="/js/data.js"></script>
+  <!-- JAVASCRIPT -->
+  <script src="/js/login.js"></script>
+</head>
+<body>
+
+  <main class="min-h-screen flex items-center justify-center">
+    <form id="formLogin" class="border p-8 rounded-md shadow">
+      <div class="py-2 text-xl font-bold text-center">Selamat Datang</div>
+      <div class="flex flex-col p-2">
+        <label for="email" class="py-2 font-bold uppercase">email</label>
+        <input id="email" type="text" name="email" placeholder="Masukkan email anda" class="p-2 rounded border">
+      </div>
+      <div class="flex flex-col p-2">
+        <label for="password" class="py-2 font-bold uppercase">password</label>
+        <input id="password" type="password" name="password" placeholder="Masukkan password anda" class="p-2 rounded border">
+      </div>
+      <div class="flex justify-end">
+        <a href="/forgot" class="text-sm">Lupa password?</a>
+      </div>
+      <div class="flex flex-col py-2">
+        <button type="submit" class="p-2 rounded bg-orange-500">masuk</button>
+        <div class="flex justify-end">
+          <a href="/register" class="text-sm">Belum punya akun?</a>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="ModalMessage"></p>
+    </div>
+  </div>
+
+</body>
+</html>
