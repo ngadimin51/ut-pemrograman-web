@@ -64,8 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000)
   })
 
-  // UI MODAL
-  const modal = document.querySelector("myModal");
+  // UI MODAL KHUSUS LOGIN
+  const modal = document.querySelector("#myModal");
   const messageElement = document.querySelector("#ModalMessage");
   var span = document.getElementsByClassName("close")[0];
 
@@ -80,32 +80,65 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.style.display = "block";
     }
   }
-
   span.addEventListener("click", () => {
     callModal("close", "")
   })
 
   // lupa password
-  const modalLupaPassword = document.querySelector('#lupaPassword')
-  const trigger = document.querySelector('#lupa')
-  trigger.addEventListener("click", (e) => {
+  const triggerLupa = document.querySelector('#lupa')
+  triggerLupa.addEventListener("click", (e) => {
     e.preventDefault()
     toggleModalDinamis("lupaPassword")
   })
+  // Form Lupa Password
+  const formLupa = document.getElementById("formLupaPassword")
+  formLupa.addEventListener("submit", (e) => {
+    e.preventDefault()
+    const f = new FormData(e.currentTarget)
+    const email = f.get("email")
+    const data = dataPengguna.filter(pengguna => pengguna.email === email)
+    if (data.length !== 1)
+      return alert("Data tidak ditemukan")
+    alert(`Password anda "${data[0].password}"`)
+    toggleModalDinamis("formLupaPassword")
+  })
 
   // register
-  const modalRegister = document.querySelector('#register')
+  const triggerDaftar = document.querySelector('#daftar')
+  triggerDaftar.addEventListener("click", (e) => {
+    e.preventDefault()
+    toggleModalDinamis("register")
+  })
+  const register = document.getElementById("formRegister")
+  register.addEventListener("submit", (e) => {
+    e.preventDefault()
+    const f = new FormData(e.currentTarget)
+    const nama = f.get("nama")
+    const email = f.get("email")
+    const password = f.get("pasword")
+    const role = f.get("role")
+    const lokasi = f.get("lokasi")
+    const data = dataPengguna.filter(pengguna => pengguna.email === email)
+    if (data.length > 0)
+      return alert("Email sudah terdaftar")
+    dataPengguna.push({
+      id: dataPengguna.length,
+      nama, email, password, role, lokasi
+    })
+    toggleModalDinamis("register")
+    alert("Berhasil, silahkan gunakan data anda untuk LOGIN")
+  })
 
   function toggleModalDinamis(id) {
     const elm = document.querySelector(`#${id}`)
     const display = elm.style.display
     if (display === "block") {
-      elm.style.display = "none";
+      return elm.style.display = "none";
     } else {
       elm.style.display = "block";
     }
-    // PERBAIKAN: Langsung cari span.close di dalam elm tanpa perlu forEach childNodes
-    const closeSpan = elm.querySelector('div.modal-content span.close');
+    // Cari span.close di dalam elm tanpa perlu forEach childNodes
+    const closeSpan = elm.querySelector('div.modal-content-sm span.close');
     if (closeSpan) {
       closeSpan.addEventListener("click", () => {
         elm.style.display = "none";

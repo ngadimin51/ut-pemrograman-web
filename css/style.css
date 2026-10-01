@@ -154,6 +154,7 @@ a.active:hover {
 .w-screen { width: 100vw; }
 .min-h-screen {min-height: 100vh;}
 .min-w-screen {min-width: 100vw;}
+.w-50 {width: 100vw;}
 
 /* =========================
    SPACING
@@ -456,6 +457,15 @@ a.active:hover {
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+  border-radius: 8px;
+}
+
+.modal-content-sm {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
   border-radius: 8px;
 }
 

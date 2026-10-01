@@ -47,23 +47,49 @@
 
   <div id="lupaPassword" class="modal">
     <!-- Modal content -->
-    <div class="modal-content">
+    <div class="modal-content-sm">
       <span class="close">&times;</span>
-      <div class="flex flex-col">
-        <label for="lupa-email" class="py-2 font-bold uppercase">Email</label>
-        <input id="lupa-email" type="email" name="email" placeholder="Masukkan password anda" class="p-2 rounded border">
-      </div>
+      <form id="formLupaPassword">
+        <div class="flex flex-col">
+          <label for="lupa-email" class="py-2 font-bold uppercase">Email</label>
+          <input id="lupa-email" type="email" name="email" placeholder="Masukkan password anda" class="p-2 rounded border">
+        </div>
+        <div class="flex justify-center py-2">
+          <button class="bg-orange-500 py-2 px-4 rounded" type=""submit>submit</button>
+        </div>
+      </form>
     </div>
   </div>
 
   <div id="register" class="modal">
     <!-- Modal content -->
-    <div class="modal-content">
+    <div class="modal-content-sm">
       <span class="close">&times;</span>
-      <div class="flex flex-col">
-        <label for="lupa-email" class="py-2 font-bold uppercase">Email</label>
-        <input id="lupa-email" type="email" name="email" placeholder="Masukkan password anda" class="p-2 rounded border">
-      </div>
+      <form id="formRegister" class="mt-4">
+        <div class="flex flex-col">
+          <label for="register-nama" class="py-2 font-bold uppercase">Nama</label>
+          <input required id="register-nama" type="text" name="nama" placeholder="Masukkan nama anda" class="p-2 rounded border">
+        </div>
+        <div class="flex flex-col">
+          <label for="register-email" class="py-2 font-bold uppercase">Email</label>
+          <input required id="register-email" type="email" name="email" placeholder="Masukkan password anda" class="p-2 rounded border">
+        </div>
+        <div class="flex flex-col">
+          <label for="register-password" class="py-2 font-bold uppercase">Password</label>
+          <input required id="register-password" type="password" name="pasword" placeholder="Password" class="p-2 rounded border">
+        </div>
+        <div class="flex flex-col">
+          <label for="register-role" class="py-2 font-bold uppercase">Role</label>
+          <input required id="register-role" type="text" name="role" placeholder="UPBJJ-UT" class="p-2 rounded border">
+        </div>
+        <div class="flex flex-col">
+          <label for="register-lokasi" class="py-2 font-bold uppercase">Lokasi</label>
+          <input required id="register-lokasi" type="text" name="lokasi" placeholder="UPBJJ-Jakarta" class="p-2 rounded border">
+        </div>
+        <div class="flex justify-center py-2">
+          <button class="bg-orange-500 py-2 px-4 rounded" type=""submit>submit</button>
+        </div>
+      </form>
     </div>
   </div>
 
