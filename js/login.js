@@ -1,31 +1,3 @@
-  /**
-   * VALIDASI
-   */
-function validasiInput(data, type) {
-  if (!data) {
-    return {
-      valid: false,
-      message: `Data ${type} harus diisi`
-    }
-  }
-
-  const string = String(data).trim()
-
-  // validasi jika email
-  const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  if (type === "email" && !pattern.test(string)) {
-    return {
-      valid: false,
-      message: "Format email tidak valid"
-    }
-  }
-
-  return {
-    valid: true,
-    message: "Silahkan melanjutkan"
-  }
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   /**
    * ELEMENT LOGIN
@@ -128,21 +100,49 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleModalDinamis("register")
     alert("Berhasil, silahkan gunakan data anda untuk LOGIN")
   })
+});
 
-  function toggleModalDinamis(id) {
-    const elm = document.querySelector(`#${id}`)
-    const display = elm.style.display
-    if (display === "block") {
-      return elm.style.display = "none";
-    } else {
-      elm.style.display = "block";
-    }
-    // Cari span.close di dalam elm tanpa perlu forEach childNodes
-    const closeSpan = elm.querySelector('div.modal-content-sm span.close');
-    if (closeSpan) {
-      closeSpan.addEventListener("click", () => {
-        elm.style.display = "none";
-      }, { once: true }); // Menggunakan { once: true } agar event listener tidak menumpuk setiap kali modal di-toggle
+  /**
+   * VALIDASI
+   */
+function validasiInput(data, type) {
+  if (!data) {
+    return {
+      valid: false,
+      message: `Data ${type} harus diisi`
     }
   }
-});
+
+  const string = String(data).trim()
+
+  // validasi jika email
+  const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (type === "email" && !pattern.test(string)) {
+    return {
+      valid: false,
+      message: "Format email tidak valid"
+    }
+  }
+
+  return {
+    valid: true,
+    message: "Silahkan melanjutkan"
+  }
+}
+
+function toggleModalDinamis(id) {
+  const elm = document.querySelector(`#${id}`)
+  const display = elm.style.display
+  if (display === "block") {
+    return elm.style.display = "none";
+  } else {
+    elm.style.display = "block";
+  }
+  // Cari span.close di dalam elm tanpa perlu forEach childNodes
+  const closeSpan = elm.querySelector('div.modal-content-sm span.close');
+  if (closeSpan) {
+    closeSpan.addEventListener("click", () => {
+      elm.style.display = "none";
+    }, { once: true }); // Menggunakan { once: true } agar event listener tidak menumpuk setiap kali modal di-toggle
+  }
+}
