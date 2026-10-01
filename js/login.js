@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   // UI MODAL
-  const modal = document.getElementById("myModal");
+  const modal = document.querySelector("myModal");
   const messageElement = document.querySelector("#ModalMessage");
   var span = document.getElementsByClassName("close")[0];
 
@@ -84,4 +84,32 @@ document.addEventListener("DOMContentLoaded", () => {
   span.addEventListener("click", () => {
     callModal("close", "")
   })
+
+  // lupa password
+  const modalLupaPassword = document.querySelector('#lupaPassword')
+  const trigger = document.querySelector('#lupa')
+  trigger.addEventListener("click", (e) => {
+    e.preventDefault()
+    toggleModalDinamis("lupaPassword")
+  })
+
+  // register
+  const modalRegister = document.querySelector('#register')
+
+  function toggleModalDinamis(id) {
+    const elm = document.querySelector(`#${id}`)
+    const display = elm.style.display
+    if (display === "block") {
+      elm.style.display = "none";
+    } else {
+      elm.style.display = "block";
+    }
+    // PERBAIKAN: Langsung cari span.close di dalam elm tanpa perlu forEach childNodes
+    const closeSpan = elm.querySelector('div.modal-content span.close');
+    if (closeSpan) {
+      closeSpan.addEventListener("click", () => {
+        elm.style.display = "none";
+      }, { once: true }); // Menggunakan { once: true } agar event listener tidak menumpuk setiap kali modal di-toggle
+    }
+  }
 });

@@ -25,12 +25,12 @@
         <input id="password" type="password" name="password" placeholder="Masukkan password anda" class="p-2 rounded border">
       </div>
       <div class="flex justify-end">
-        <a href="/forgot" class="text-sm">Lupa password?</a>
+        <a id ="lupa" href="/forgot" class="text-sm">Lupa password?</a>
       </div>
       <div class="flex flex-col py-2">
         <button type="submit" class="p-2 rounded bg-orange-500">masuk</button>
         <div class="flex justify-end">
-          <a href="/register" class="text-sm">Belum punya akun?</a>
+          <a id ="daftar" href="/register" class="text-sm">Belum punya akun?</a>
         </div>
       </div>
     </form>
@@ -42,6 +42,28 @@
     <div class="modal-content">
       <span class="close">&times;</span>
       <p id="ModalMessage"></p>
+    </div>
+  </div>
+
+  <div id="lupaPassword" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="flex flex-col">
+        <label for="lupa-email" class="py-2 font-bold uppercase">Email</label>
+        <input id="lupa-email" type="email" name="email" placeholder="Masukkan password anda" class="p-2 rounded border">
+      </div>
+    </div>
+  </div>
+
+  <div id="register" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="flex flex-col">
+        <label for="lupa-email" class="py-2 font-bold uppercase">Email</label>
+        <input id="lupa-email" type="email" name="email" placeholder="Masukkan password anda" class="p-2 rounded border">
+      </div>
     </div>
   </div>
 
